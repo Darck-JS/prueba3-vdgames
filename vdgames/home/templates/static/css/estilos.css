@@ -12,3 +12,11 @@
     src: url(../fonts/SuperMario256.ttf),
     url(../fonts/PileOfRock.ttf);
 }
+
+footer{
+    text-align: center;
+    color: white;
+    background-color: darkslategrey;
+    padding: 10px;
+    bottom: 0;
+}
