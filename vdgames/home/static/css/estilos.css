@@ -16,7 +16,7 @@
 footer{
     text-align: center;
     color: white;
-    background-color: darkslategrey;
+    background-color: rgb(39, 65, 65);
     padding: 10px;
-    bottom: 0;
+    width: 100%;
 }
