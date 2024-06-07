@@ -14,9 +14,10 @@
 }
 
 footer{
-    text-align: left;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     color: violet;
     background-color: rgb(39, 65, 65);
     padding: 10px;
-    width: 100%;
 }
