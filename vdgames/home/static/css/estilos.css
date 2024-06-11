@@ -1,23 +1,87 @@
-.body{
-    background-color: rgba(45, 43, 43, 0.573);
+body {
+    background-color: rgb(168, 178, 178);
 }
 
-.titulo{
+h1 {
     text-align: center;
     font-family: mario256;
+}
+
+h2 {
+    text-align: center;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(74, 76, 76, 0.663);
+    padding: 10px;
+    font-family: letrafooter;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    width: 800px;
+    height: 500px;
+}
+
+
+
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.container-fluid{
+    background-color: red;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+.rrss {
+    margin-left: 20%;
+    margin-right: 10%;
+    text-align: left;
+    list-style: none;
+}
+
+.paginasExternas {
+    margin-left: 20%;
+    margin-right: 10%;
+    text-align: left;
+    list-style: none;
+}
+
+.video {
+    text-align: center;
 }
 
 @font-face {
     font-family: mario256;
     src: url(../fonts/SuperMario256.ttf),
-    url(../fonts/PileOfRock.ttf);
+        url(../fonts/PileOfRock.ttf);
 }
 
-footer{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: violet;
-    background-color: rgb(39, 65, 65);
-    padding: 10px;
+@font-face {
+    font-family: letrafooter;
+    src: url(../fonts/Retro\ Team.otf),
 }
