@@ -29,25 +29,15 @@ footer {
 }
 
 .carousel {
-    display: flex;
+    width: 800px;
+}
+
+.img-carrusel{
     width: 800px;
     height: 500px;
 }
 
-
-
-.carousel-item {
-    height: 65vh;
-    min-height: 300px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-
 .container-fluid{
-    background-color: red;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
