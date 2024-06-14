@@ -45,7 +45,12 @@ footer {
     justify-content: space-around;
 }
 
-
+.card {
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+}
 
 .rrss {
     margin-left: 20%;
