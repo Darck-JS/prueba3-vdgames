@@ -109,13 +109,14 @@
                         <li class="nav-item">
                             <a class="navbar-brand" href="{% url 'consolas' %}">Consolas</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="{% url 'contacto' %}">Contacto</a>
-                        </li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Busca aquí" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            <a class="btn btn-outline-light" href="{% url 'login' %}" role="button">Ingresa</a>
+                            
+                        </div>
                     </form>
                 </div>
             </div>
@@ -144,15 +145,26 @@
             </div>
             <img src="{% static 'images/logo.jpg'%}" width="70" alt="" class="image">
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="link-body-emphasis" href="https://x.com/"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="https://www.instagram.com"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="https://github.com"><svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="https://x.com/"><svg class="bi" width="24"
+                            height="24">
+                            <use xlink:href="#twitter" />
                         </svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="https://www.instagram.com"><svg class="bi"
+                            width="24" height="24">
+                            <use xlink:href="#instagram" />
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/"><svg class="bi"
+                            width="24" height="24">
+                            <use xlink:href="#facebook" />
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="https://github.com"><svg class="bi" width="24"
+                            height="24">
+                            <use xlink:href="#github" />
+                        </svg></a></li>
+                </svg></a></li>
             </ul>
         </footer>
     </div>
-    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
 </body>
 
 
@@ -175,4 +187,6 @@
     </symbol>
 </svg>
 
+
+<script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
 </html>

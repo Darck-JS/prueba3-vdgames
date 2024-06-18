@@ -7,9 +7,9 @@ def home (request):
     context={}
     return render(request, 'home/index.html', context)
 
-def contacto (request):
+def login (request):
     context={}
-    return render(request, 'home/contacto.html', context)
+    return render(request, 'home/login.html', context)
 
 def jclasicos (request):
     context={}

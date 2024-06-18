@@ -87,3 +87,6 @@
 //       $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
 //     }
 //   });
+
+//Funciones del Login
+
