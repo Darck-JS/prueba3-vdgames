@@ -7,5 +7,8 @@ urlpatterns = [
     path('JuegosClasicos/', views.jclasicos, name='JuegosClasicos'),
     path('categorias/', views.categorias, name='categorias'),
     path('consolas/', views.consolas, name='consolas'),
-    path('proximamente/', views.proximamente, name='proximamente'),
+    path('Indie/', views.indie, name='indie'),
+    path('Administrar/', views.administrar, name='Administrar usuarios'),
+    path('adm/', views.crud, name='crud'),
+    path('Registrate/', views.registro, name='registro'),
 ]

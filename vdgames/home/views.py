@@ -23,6 +23,19 @@ def consolas (request):
     context={}
     return render(request, 'home/consolas.html', context)
 
-def proximamente (request):
+def indie (request):
     context={}
-    return render(request, 'home/proximamente.html', context)
+    return render(request, 'home/indie.html', context)
+
+def administrar (request):
+    context={}
+    return render(request, 'home/Administrar usuarios.html', context)
+
+def crud (request):
+    context={}
+    return render(request, 'home/crud.html', context)
+
+def registro (request):
+    context={}
+    return render(request, 'home/registro.html', context)
+
