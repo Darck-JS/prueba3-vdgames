@@ -24,7 +24,7 @@
         <div class="col-md-6">
           <label for="fono" class="form-label">telefono</label>
           <div class="input-group">
-            <select id="fono" class="form-select-outline-secondary">
+            <select id="selec" class="form-select-outline-secondary">
               <option>+1</option>    <!-- Canadá y Estados Unidos -->
               <option>+52</option>   <!-- México -->
               <option>+53</option>   <!-- Cuba -->
@@ -90,16 +90,16 @@
           </div>
         </div>
       <div class="col-md-6">
-        <label for="paterno" class="form-label">Contraseña*</label>
-        <input type="text" class="form-control" id="paterno">
+        <label for="pass" class="form-label">Contraseña*</label>
+        <input type="password" class="form-control" id="pass">
       </div>
       <div class="col-md-6 mb-3">
-        <label for="materno" class="form-label">Confirmar contraseña*</label>
-        <input type="text" class="form-control" id="materno">
+        <label for="passconfir" class="form-label">Confirmar contraseña*</label>
+        <input type="password" class="form-control" id="passconfir">
       </div>
       <div class="botonRegistrate">
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Registrate</button>
+          <input type="submit" onclick='return enviaFormulario();' class="btn btn-primary" value="Registrate">
         </div>
       </div>
         <hr class="my-4">

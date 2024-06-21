@@ -1,8 +1,3 @@
-/*!
- * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2023 The Bootstrap Authors
- * Licensed under the Creative Commons Attribution 3.0 Unported License.
- */
 
 (() => {
     'use strict'
@@ -78,15 +73,34 @@
         })
     })
   })()
-// $.ajax({
-//     url: "/api/getWeather",
-//     data: {
-//       zipcode: 97201
-//     },
-//     success: function( result ) {
-//       $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
-//     }
-//   });
 
-//Funciones del Login
+//Funciones del registro
 
+function enviaFormulario() {
+  console.log('formulario en');
+  return false;
+
+}
+
+
+$(document).ready(function(){
+
+
+  //valida login
+  $("#login").click(function(){
+    var user = $('#user').val();
+    var pass = $("#pass").val();
+    var error;
+    if (user == "" || user == null) {
+      error = "favor ingrese su Nombre de Usuario\n"
+    }
+    if (pass == "" || pass == null) {
+      error += "favor ingrese su Contraseña\n"
+    }
+    if (error.length >1 ) {
+      alert(error)
+      event.preventDefault();
+    }
+
+  })
+});

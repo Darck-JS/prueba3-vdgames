@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% block contenido %}
+
+<br>
+<div class="row">
+    <h1>Listado de Usuarios</h1>
+</div>
+<button type="button">
+    <a href="{% url 'Administrar usuarios' %}">Agregar</a>
+</button>
+<div id="mensajes">
+    {% if mensaje %}
+        {{mensaje}}
+    {% endif %}
+</div>
+
+<div class="container" style="width: 60%;">
+    <table class="table table-dark table-hover">
+        {% if usuario %}
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Usuario</th>
+            <th>contraseña</th>
+            {% for x in usuario %}
+                <tr>
+                    <td>{{ x.id_user }}</td>
+                    <td>{{ x.nombre }}</td>
+                    <td>{{ x.apellido_paterno }}</td>
+                    <td>{{ x.apellido_materno }}</td>
+                    <td>{{ x.user }}</td>
+                    <td>{{ x.contasena }}</td>
+                    
+                </tr>    
+            {% endfor %}
+        {% endif %}
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        $('mensajes').delay(2000).fadeOut("slow");
+    });
+</script>
+
+{% endblock %}

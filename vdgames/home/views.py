@@ -1,4 +1,5 @@
-from django.shortcuts import render 
+from django.shortcuts import render
+from .models import Usuarios
 
 # Create your views here.
 
@@ -28,12 +29,41 @@ def indie (request):
     return render(request, 'home/indie.html', context)
 
 def administrar (request):
-    context={}
+    usuario=Usuarios.objects.all()
+    context={
+        'usuario' : usuario
+    }
     return render(request, 'home/Administrar usuarios.html', context)
 
-def crud (request):
-    context={}
-    return render(request, 'home/crud.html', context)
+def listauser (request):
+    if request.method != "POST":
+        usuario=Usuarios.objects.all()
+        context={'usuario' : usuario}
+        return render(request, 'home/lista usuarios.html', context)
+    else:
+        id=request.POST["id"]
+        nombre=request.POST["nombre"]
+        aPaterno=request.POST["paterno"]
+        aMaterno=request.POST["materno"]
+        genero=request.POST["genero"]
+        telefono=request.POST["telefono"]
+        email=request.POST["email"]
+        contasena=request.POST["contrasena"]
+
+        obj=Usuarios.objects.create(
+            id_user=id,
+            nombre=nombre, 
+            apellido_paterno=aPaterno,
+            apellido_materno=aMaterno,
+            genero=genero,
+            telefono=telefono,
+            correo=email,
+            contasena=contasena,
+        )
+        obj.save()
+        context={'mensaje':"Datos almacenados de manera correcta"}
+        return render(request, 'home/lista usuarios.html',context)
+
 
 def registro (request):
     context={}

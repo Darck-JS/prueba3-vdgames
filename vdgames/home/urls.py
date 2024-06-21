@@ -9,6 +9,6 @@ urlpatterns = [
     path('consolas/', views.consolas, name='consolas'),
     path('Indie/', views.indie, name='indie'),
     path('Administrar/', views.administrar, name='Administrar usuarios'),
-    path('adm/', views.crud, name='crud'),
-    path('Registrate/', views.registro, name='registro'),
+    path('listado usuarios/', views.listauser, name='lista usuarios'),
+    path('Registrate/<str:pk>', views.registro, name='registro'),
 ]
