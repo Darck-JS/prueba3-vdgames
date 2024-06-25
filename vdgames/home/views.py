@@ -1,16 +1,22 @@
 from django.shortcuts import render
-from .models import Usuarios
+from django.http import HttpResponseRedirect
+from .models import Colaboradores
+from django.contrib.auth.decorators import login_required
+
+from .forms import formuser
 
 # Create your views here.
 
-
+@login_required
 def home (request):
-    context={}
+    request.session["usuario"]="admin"
+    usuario=request.session["usuario"]
+    context={"usuario":usuario}
     return render(request, 'home/index.html', context)
 
-def login (request):
-    context={}
-    return render(request, 'home/login.html', context)
+# def login (request):
+#     context={}
+#     return render(request, 'home/login.html', context)
 
 def jclasicos (request):
     context={}
@@ -29,15 +35,29 @@ def indie (request):
     return render(request, 'home/indie.html', context)
 
 def administrar (request):
-    usuario=Usuarios.objects.all()
-    context={
-        'usuario' : usuario
-    }
-    return render(request, 'home/Administrar usuarios.html', context)
+    print("estoy en la funcion crud para el formulario")
+    context={}
+
+    if request.method == "POST":
+        print("en el if post del crud para el formulario")
+        form = formuser(request.POST)
+        if form.is_valid:
+            print("en el agregar, is_valid")
+            form.save()
+
+            # limpiar form
+            form=formuser()
+
+            context={'mensaje':"ok, datos grabados...","form":form}
+            return render(request, 'home/Administrar usuarios.html', context)
+        else:
+            form=formuser()
+            context={'form':form}
+            return render(request, 'home/Administrar usuarios.html', context)
 
 def listauser (request):
     if request.method != "POST":
-        usuario=Usuarios.objects.all()
+        usuario=Colaboradores.objects.all()
         context={'usuario' : usuario}
         return render(request, 'home/lista usuarios.html', context)
     else:
@@ -50,7 +70,7 @@ def listauser (request):
         email=request.POST["email"]
         contasena=request.POST["contrasena"]
 
-        obj=Usuarios.objects.create(
+        obj=Colaboradores.objects.create(
             id_user=id,
             nombre=nombre, 
             apellido_paterno=aPaterno,

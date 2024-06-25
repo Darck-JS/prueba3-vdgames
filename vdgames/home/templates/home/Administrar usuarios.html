@@ -1,18 +1,15 @@
-{% extends 'home/base.html' %}
-{% block contenido %}
-
-
-
-
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_table }}
-    <input type="submit" value="Agregar">
-</form>
-
-
-
-
-
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" value="Agregar">
+    </form>
+</body>
+</html>

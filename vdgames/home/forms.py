@@ -1,9 +1,9 @@
 from django import forms
-from models import Usuarios
+from .models import Colaboradores
 
 from django.forms import ModelForm
 
 class formuser(ModelForm):
     class Meta:
-        model = Usuarios
+        model = Colaboradores
         fields = "__all__"
