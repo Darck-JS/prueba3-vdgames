@@ -5,6 +5,7 @@
 <h1>Registrate y comparte tus juegos con todo el mundo!!!</h1><br>
 <div class="contenedorRegistro container-lg">
   <form class="registro row g-3 border rounded-3 bg-body-tertiary">
+    {% csrf_token %}
       <div class="col-md-7">
         <label for="nombre" class="form-label">Nombre*</label>
         <input type="text" class="form-control" id="nombre">

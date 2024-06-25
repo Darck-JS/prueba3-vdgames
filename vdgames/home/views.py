@@ -9,14 +9,10 @@ from .forms import formuser
 
 @login_required
 def home (request):
-    request.session["usuario"]="admin"
+    request.session["usuario"]
     usuario=request.session["usuario"]
     context={"usuario":usuario}
     return render(request, 'home/index.html', context)
-
-# def login (request):
-#     context={}
-#     return render(request, 'home/login.html', context)
 
 def jclasicos (request):
     context={}
