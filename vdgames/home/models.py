@@ -20,7 +20,7 @@ class Colaboradores(models.Model):
         verbose_name_plural='Colaboradores'
 
 class registro_colaborador(models.Model):
-    id_user= models.ForeignKey(Colaboradores,on_delete=models.CASCADE,primary_key=True)
+    id_user= models.OneToOneField(Colaboradores,on_delete=models.CASCADE,primary_key=True)
     user = models.CharField(unique=True, max_length=20, verbose_name='usuario')
     contasena = models.CharField(max_length=12, null=False, blank=False)
 

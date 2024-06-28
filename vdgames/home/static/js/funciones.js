@@ -104,3 +104,25 @@ $(document).ready(function(){
 
   })
 });
+
+
+const games = [
+  // tus datos de juegos aquí
+];
+
+const sendDataToBackend = async (data) => {
+  const response = await fetch('/api/games', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  });
+  return response.json();
+};
+
+sendDataToBackend(games).then(response => {
+  console.log('Data sent to backend:', response);
+}).catch(error => {
+  console.error('Error sending data to backend:', error);
+});
