@@ -10,7 +10,30 @@
 {% block contenido %}
 
 <div class="shadow p-3 mb-5 bg-body-tertiary rounded text-center">
-    <h1>aqui estan las categorias</h1>    
+    <h1>menu administrador</h1>
+</div>
+<div class="container" style="width: 60%;">
+    <table class="table table-dark table-hover">
+        {% if usuario %}
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Usuario</th>
+            <th>contraseña</th>
+            {% for x in usuario %}
+                <tr>
+                    <td>{{ x.id_user }}</td>
+                    <td>{{ x.nombre }}</td>
+                    <td>{{ x.apellido_paterno }}</td>
+                    <td>{{ x.apellido_materno }}</td>
+                    <td>{{ x.user }}</td>
+                    <td>{{ x.contasena }}</td>
+                    
+                </tr>    
+            {% endfor %}
+        {% endif %}
+    </table>
 </div>
 
 

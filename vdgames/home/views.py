@@ -1,35 +1,38 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Colaboradores
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 from .forms import formuser
 
 # Create your views here.
 
-# @login_required
+@login_required
 def index (request):
-    # request.session["usuario"]
-    # usuario=request.session["usuario"]
     context={}
     return render(request, 'home/index.html', context)
 
+@login_required
 def jclasicos (request):
     context={}
     return render(request, 'home/juegos clasicos.html', context)
 
-def categorias (request):
-    context={}
-    return render(request, 'home/categorias.html', context)
+# @login_required
+# def categorias (request):
+#     context={}
+#     return render(request, 'home/categorias.html', context)
 
+@login_required
 def consolas (request):
     context={}
     return render(request, 'home/consolas.html', context)
 
+@login_required
 def indie (request):
     context={}
     return render(request, 'home/indie.html', context)
 
+@login_required
 def administrar (request):
     print("estoy en la funcion crud para el formulario")
     context={}
@@ -51,6 +54,7 @@ def administrar (request):
             context={'form':form}
             return render(request, 'home/Administrar usuarios.html', context)
 
+@login_required
 def listauser (request):
     if request.method != "POST":
         usuario=Colaboradores.objects.all()

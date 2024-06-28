@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),
     path('', include('administrador.urls')),
+    path('', include('home.urls')),
 
     path("accounts/", include('django.contrib.auth.urls')), #ruta para los usuarios o crear el login
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

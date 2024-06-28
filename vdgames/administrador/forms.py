@@ -7,3 +7,8 @@ class formuser(ModelForm):
     class Meta:
         model = Colaboradores
         fields = "__all__"
+
+
+class loginforms(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)

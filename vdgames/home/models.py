@@ -10,6 +10,7 @@ class Colaboradores(models.Model):
     telefono = models.CharField(max_length=15)
     email = models.EmailField(unique=True, max_length=100, verbose_name='correo')
     mas18=models.BooleanField(default=False)
+    id_user=models.IntegerField()
 
     def __str__(self):
         return str(self.nombre)+" "+str(self.apellido_paterno)
@@ -19,7 +20,7 @@ class Colaboradores(models.Model):
         verbose_name_plural='Colaboradores'
 
 class registro_colaborador(models.Model):
-    id_user= models.ForeignKey(Colaboradores,on_delete=models.CASCADE)
+    id_user= models.ForeignKey(Colaboradores,on_delete=models.CASCADE,primary_key=True)
     user = models.CharField(unique=True, max_length=20, verbose_name='usuario')
     contasena = models.CharField(max_length=12, null=False, blank=False)
 
@@ -31,6 +32,7 @@ class indie(models.Model):
     categoria=models.CharField(max_length=40)
     image=models.ImageField(upload_to="images", null=True, blank=True)
     descripcion=models.CharField(max_length=500)
+    user=models.ForeignKey(registro_colaborador,on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.nombre)

@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
     'administrador',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -69,8 +69,8 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = "menu"
-LOGOUT_REDIRECT_URL= "home"
+LOGIN_REDIRECT_URL = 'menu'
+LOGOUT_REDIRECT_URL= 'login'
 
 WSGI_APPLICATION = 'vdgames.wsgi.application'
 
