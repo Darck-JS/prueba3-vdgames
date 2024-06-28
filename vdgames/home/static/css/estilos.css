@@ -3,6 +3,10 @@ h1 {
     font-family: mario256;
 }
 
+li{
+    list-style: none;
+}
+
 @font-face {
     font-family: mario256;
     src: url(../fonts/SuperMario256.ttf),

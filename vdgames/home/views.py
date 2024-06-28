@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Colaboradores
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 
 from .forms import formuser
 
 # Create your views here.
 
-@login_required
-def home (request):
-    request.session["usuario"]
-    usuario=request.session["usuario"]
-    context={"usuario":usuario}
+# @login_required
+def index (request):
+    # request.session["usuario"]
+    # usuario=request.session["usuario"]
+    context={}
     return render(request, 'home/index.html', context)
 
 def jclasicos (request):

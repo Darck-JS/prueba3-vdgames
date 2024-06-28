@@ -3,16 +3,15 @@
 
 
 {% block contenido %}
-<button><a href="{% url 'lista usuarios' %}">adminsitar</a></button>
+<!-- <button><a href="{% url 'lista usuarios' %}">adminsitar</a></button> -->
 <div class="container col-xl-10 col-xxl-8 px-4 py-5">
     <div class="row align-items-center g-lg-5 py-5">
         <div class="col-lg-7 text-center text-lg-start">
             <h1 class="blogin display-4 fw-bold">¡Que bueno verte otra vez!</h1>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" >
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" action="">
                 {% csrf_token %}
-                <!-- {{ form.as_table }} -->
                 <div class="input-group mb-3">
                     <span class="input-group-text">@</span>
                     <div class="form-floating">

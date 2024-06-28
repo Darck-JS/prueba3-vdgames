@@ -69,7 +69,8 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "menu"
+LOGOUT_REDIRECT_URL= "home"
 
 WSGI_APPLICATION = 'vdgames.wsgi.application'
 
